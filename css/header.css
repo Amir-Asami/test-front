@@ -1,0 +1,243 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;400;500;600;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Vazir&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: 'Vazir', sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===============BASE NOTES================= */
+img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 94vw;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 1.2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+.split{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+}
+
+
+/* ===============HEADER================= */
+.header{
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f5f5f5;
+    z-index: 9;
+
+    box-shadow: 0px 0px 35px -14px rgba(0, 0, 0, 0.65);
+        -webkit-box-shadow: 0px 0px 35px -14px rgba(0, 0, 0, 0.65);
+        -moz-box-shadow: 0px 0px 35px -14px rgba(0, 0, 0, 0.65);
+}
+.header-content{
+    gap: 20px;
+}
+.logo{
+    width: 20px;
+    height: 20px;
+
+}
+
+.nav-items{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+.search{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    transition: all .4s;
+}
+.search:nth-child(1){
+    display: none;
+}
+
+
+
+.logo-container {
+    position: relative;
+    top: 10px;
+    left: 0;
+    z-index:1;
+    
+    width: 90px; /* این باید برابر با عرض تصویر یا بزرگتر باشد */
+    height: auto;
+}
+
+.logo-text {
+    position: absolute;
+    top: -26px;
+    left: 45px;
+    color: #001427 ; /* مثلاً رنگ سفید */
+    font-size: 20px; /* اندازه فونت */
+    font-weight: bold; /* وزن فونت */
+    z-index: 2; /* اطمینان از اینکه بالای تصویر قرار می‌گیرد */
+ 
+}
+.logo-img {
+    display: block;
+
+    position: absolute; /* تغییر از fixed به absolute **/
+    top:-47px;
+    left: 10px; /* فاصله از چپ */
+    width: 90px; /* عرض تصویر */
+    height: auto; /* ارتفاع به صورت خودکار تغییر می‌کند */
+    z-index: 1; /* ایندکس زدن برای نمایش بالاتر از سایر عناصر */
+ opacity: 80%;
+}
+
+
+.search-box{
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid #d1d1d1;
+    text-transform: capitalize;
+    background: none;
+    color: #001427;
+    width: 100%;
+    
+}
+.search-btn{
+    padding: 12px 20px;
+    border: none;
+    background:#8d0801;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.search-box::placeholder{
+    color: #a9a9a9;
+}
+.user-img{
+    width: 30px;
+    margin-left: 20px;
+}
+
+/* ===================NAV================== */
+.nav{
+    margin-top: 1rem;
+}
+.nav-list{
+    margin-top: 1rem;
+    width: 100%;
+    margin-inline: auto;
+}
+.nav-link{
+    padding-bottom: .5rem;
+}
+.nav-link a{
+    color: #383838;
+}
+.nav-link a:hover{
+    opacity: .5;
+    border-bottom: solid 1px #001427;
+    transition: all .2s;
+}
+
+
+.nav-list a:hover{
+    color: #8d0801;
+}
+.nav-list a {
+    color: #001427;
+}
+#basket{
+    position: relative;
+}
+#basket::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 9px;
+    border: solid red 2px;
+    width: 50px;
+    height: 50px;
+    z-index: 129;
+}
+
+
+
+
+
+@media screen and (min-width: 485px) {
+    .container{
+        width: 90vw;
+    }
+    .nav-list{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 658px) {
+    .container{
+        width: 85vw;
+    }
+    .search:nth-child(1){
+        display: flex;
+        width: 100%;
+    }
+    .search:nth-child(2){
+        display: none;
+    }
+    .nav-items{
+        width: 90%;
+    }
+    .nav-list{
+        width: 70%;
+    }
+}

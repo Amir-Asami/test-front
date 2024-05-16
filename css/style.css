@@ -1,0 +1,99 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+img{
+    max-width: 100%;
+    height:auto  ;
+}
+body{
+ min-height: 100vh;
+ display: flex;
+ align-items:center;
+ justify-content: center;
+ background-color: #ffffff;
+ 
+}
+.container{
+    /* max-width: 100%; */
+    
+        width: 100%; /* اطمینان از اینکه container تمام عرض صفحه را پوشش دهد */
+        max-width: 500px; /* یا هر عرض دیگری که مد نظر دارید */
+        margin: auto; /* مرکزیت container */
+    
+
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    background-color: #F4D58D;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 50px;
+
+}
+.login_form_image img{
+    width: 100%;
+    height: 30vh ;
+    object-fit: cover;
+}
+.login_form_right {
+
+    padding: 2rem;
+    text-align: center;
+}
+.login_form_right form{
+
+   display: flex;
+   flex-direction: column;
+   min-height: 25vh ;
+}
+.login_form_right h1{
+    margin-bottom: 2rem;
+    color:#001427;
+
+    font-family: "Lucida Handwriting", cursive;
+    
+}
+.login_form_right form input
+{
+
+    width: 100%;
+    margin-bottom: 1rem ;
+    border: none;
+    background-color: #ffffff;
+    color:#001427 ;
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    outline: none;
+ }
+ .login_form_right form button
+ {
+
+    width: 100%;
+    margin-bottom: 1rem ;
+    border: none;
+    background-color: #8D0801;
+    color: #fff;
+    
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.7rem;
+    cursor:pointer;
+    transition: background 0.2s ease;
+ }
+ .login_form_right form button:hover{
+    background-color:#8D0801 ;
+    border: 2px solid#8D0801 ;
+ }
+ 
+ .login_form_right form input :focus{
+    border: 2px solid#8D0801;
+    box-shadow:0 0 0px 20px #8D0801;
+ }
+ 
+
+ 
