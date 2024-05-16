@@ -281,7 +281,8 @@ body {
 #product1  .pro-container {
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
     padding-top: 20px;
     flex-wrap: wrap;
 }
