@@ -167,7 +167,39 @@ p {
     width: 30px;
     margin-left: 20px;
 }
+#user-section{
 
+    display: flex;
+    flex-direction: row;
+}
+#user-section img{
+        margin-right: 10px;
+}
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.user-img {
+    cursor: pointer;
+}
+
+
+.exit-btn {
+    display: none; 
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+}
 /* ===================NAV================== */
 .nav{
     margin-top: 1rem;

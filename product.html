@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <title>Carpet</title>
+</head>
+
+<body>
+    <!-- Start Header -->
+
+    <section id="header">
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+
+            <span id="bar">
+                <i class="fas fa-outdent"></i>
+            </span>
+        </div>
+    </section>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content split">
+                <!-- <div class="logo-text">carpet</div> -->
+                <div class="logo-container">
+                    <img src="img/dark-logo.png" alt="carpet" class="logo-img" />
+                    <div class="logo-text">carpet</div>
+                </div>
+
+                <div class="nav-items">
+                    <div class="search">
+                        <input type="text" class="search-box" placeholder="Search Product..." />
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <img src="img/user.png" class="user-img" alt="User" />
+                    <!-- <img src="img/cart.png" id="basket" class="user-img" alt="Shopping-cart"> -->
+                </div>
+            </div>
+            <!-- <div class="search">
+            <input type="text" class="search-box" placeholder="Search Product...">
+            <button class="search-btn">Search</button>
+        </div> -->
+
+            <nav class="nav" id="nav">
+                <hr style="opacity: 0.5" />
+                <ul class="nav-list split">
+                    <li><a class="active" href="index.html">خانه</a></li>
+                    <li><a href="shop.html">فروشگاه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="contact.html">ارتباط با ما</a></li>
+                    <li id="lg-back">
+                        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </li>
+                    <a href="#" id="close"><i class="fas fa-times"></i></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Product Details -->
+    <section id="prodetalis" class="section-p1">
+        <div class="single-pro-image">
+            <img src="images/products/f1.jpg" width="100%" id="MainImg" alt="" />
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="images/products/f1.jpg" width="100%" class="small-img" alt="" />
+                </div>
+                <div class="small-img-col">
+                    <img src="images/products/f2.jpg" width="100%" class="small-img" alt="" />
+                </div>
+                <div class="small-img-col">
+                    <img src="images/products/f3.jpg" width="100%" class="small-img" alt="" />
+                </div>
+                <div class="small-img-col">
+                    <img src="images/products/f4.jpg" width="100%" class="small-img" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h4 id="title">Men Fashion T Shirt</h4>
+            <h2 id="price">$139.00</h2>
+            <!-- <select>
+                <option>Select Size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select> -->
+            <input type="number" value="1" id="amount"/>
+            <button class="normal" id="addToCartButton">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span id="description">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
+                quisquam itaque commodi quia! Aspernatur, ipsum. Inventore animi, enim
+                placeat autem illum sit doloremque dolores laborum recusandae
+                accusantium libero ab expedita.
+            </span>
+        </div>
+    </section>
+    <!-- End Product Details -->
+    <!-- Start Footer Section -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/dark-logo.png" alt="" />
+            <h4>Contact</h4>
+            <p>
+                <strong>Address: </strong> دفتر مرکزی: تهران، خیابان شهید بهشتی،
+                خیابان سرافراز، کوچه پنجم، پلاک 1، واحد 5
+            </p>
+            <p><strong>Phone: </strong> 021-41173</p>
+            <p><strong>Hours: </strong> 08:00 - 18:00. شنبه تا چهارشنبه</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icons">
+                    <div class="icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fab fa-pinterest-p"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let MainImg = document.getElementById("MainImg");
+        let smallImg = document.getElementsByClassName("small-img");
+        let smImage = Array.from(smallImg);
+        smImage.forEach((e) => {
+            e.addEventListener("click", function () {
+                MainImg.src = e.src;
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+    <script>
+        const description = document.getElementById("description");
+        const title = document.getElementById("title");
+        const price = document.getElementById("price");
+        const addToCartButton = document.getElementById("addToCartButton");
+        const amount = document.getElementById("amount");
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+        fetchProductByID(productId).then((result) => {
+            console.log(result);
+            description.innerText = result.description;
+            price.innerText = result.price + " ریال ";
+            title.innerText = result.name;
+        });
+        addToCartButton.addEventListener('click', () => {
+            updateCart(productId,amount.value).then((result) => {
+                console.log(result);
+            });
+            // Reload the page to update the UI
+            // window.location.reload();
+        });
+    </script>
+</body>
+
+</html>

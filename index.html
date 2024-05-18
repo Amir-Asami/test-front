@@ -11,44 +11,50 @@
     <link rel="stylesheet" href="css/header.css" />
     <title>Toranj</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
-    <!-- Start Header -->
-
+    <section id="header">
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <span id="bar">
+                <i class="fas fa-outdent"></i>
+            </span>
+        </div>
+    </section>
     <header class="header">
         <div class="container">
-            <div class="header-content split">
-                <div class="logo-container">
-                    <img src="img/dark-logo.png" alt="carpet" class="logo-img" />
-                    <div class="logo-text">Toranj</div>
-                </div>
-                <!-- <div class="nav-items">
-                    <div class="search">
-                        <input type="text" id="search-input" placeholder="Search Product..." />
-                        <button id="search-btn">Search</button>
-                    </div>
-                    <a href="login.html">
-                        <img src="img/user.png" class="user-img" alt="User" id="userImage" />
-                    </a>
-                </div> -->
-            </div>
-
-            <nav class="nav" id="nav">
-                <hr style="opacity: 0.5" />
-                <ul class="nav-list split">
-                    <li><a class="active" href="index.html">خانه</a></li>
-                    <li><a href="shop.html">فروشگاه</a></li>
-                    <li><a href="about.html">درباره ما</a></li>
-                    <li><a href="contact.html">ارتباط با ما</a></li>
-                    <li id="lg-back">
-                        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                    </li>
-                    <a href="#" id="close"><i class="fas fa-times"></i></a>
-                </ul>
-            </nav>
+    <div class="header-content split">
+        <div class="logo-container">
+            <img src="img/dark-logo.png" alt="carpet" class="logo-img">
+            <div class="logo-text">carpet</div>
         </div>
-    </header>
+        <div class="nav-items">
+            <div class="search">
+                <input type="text" class="search-box" id="search-input" placeholder="Search Product..." />
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
+            <div id="user-section" >
+                <img src="img/user.png" class="user-img" alt="User" id="userImage" />
+                <div class="user-name" id="userName" style="display: none;"></div>
+                <button id="exitButton" class="exit-btn">خروج</button>
+            </div>
+        </div>
+    </div>
+    <nav class="nav" id="nav">
+        <hr style="opacity: .5;">
+        <ul class="nav-list split">
+            <li><a class="active" href="index.html">خانه</a></li>
+                <li><a href="shop.html">فروشگاه</a></li>
+                <li><a href="about.html">درباره ما</a></li>
+                <li><a href="contact.html">ارتباط با ما</a></li>
+                <li id="lg-back"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+        </ul>
+    </nav>
+</div>
+</header>
     <!-- End Header -->
 
     <!-- Start Hero Section -->
@@ -133,6 +139,38 @@
         </div>
     </footer>
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userImage = document.getElementById('userImage');
+            const userNameDiv = document.getElementById('userName');
+            const exitButton = document.getElementById('exitButton');
+
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                // User is logged in, show their name
+                exitButton.style.display = 'inline-block';
+                userNameDiv.textContent = `خوش آمدی, ${user.name}`;
+                userNameDiv.style.display = 'block';
+                exitButton.addEventListener('click', () => {
+                    // Remove user data from localStorage
+                    localStorage.removeItem('user');
+                    // Clear all cookies
+                    document.cookie.split(";").forEach((cookie) => {
+                        const name = cookie.split("=")[0].trim();
+                        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+                    });
+                    // Reload the page to update the UI
+                    window.location.reload();
+                });
+            } else {
+                exitButton.style.display = 'none';
+                // User is not logged in, navigate to login screen when image is clicked
+                userImage.addEventListener('click', () => {
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

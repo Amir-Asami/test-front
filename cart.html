@@ -252,6 +252,20 @@
         <!-- End Footer -->
         <script src="js/all.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="main.js"></script>
+        <script>
+            // const description = document.getElementById("description");
+            // const title = document.getElementById("title");
+            // const price = document.getElementById("price");
+            // const urlParams = new URLSearchParams(window.location.search);
+            // const productId = urlParams.get("id");
+            getCartItems().then((result) => {
+                console.log(result);
+                description.innerText = result.description;
+                price.innerText = result.price + " ریال ";
+                title.innerText = result.name;
+            });
+        </script>
     </body>
 
 </html>
