@@ -78,14 +78,13 @@
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(data),
-                    credentials: 'include',
                 });
                 const result = await response.json();
                 if (response.ok) {
                     // Save user info in localStorage
                     localStorage.setItem('user', JSON.stringify(result.user));
                     console.log("Login successful", result);
-                    window.location.href = "index.html"; // Redirect to dashboard or another page
+                
                 } else {
                     // Handle login error
                     console.error("Login failed", result);
