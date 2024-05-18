@@ -96,6 +96,38 @@
                 displayProducts(products);
             });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const userImage = document.getElementById('userImage');
+                const userNameDiv = document.getElementById('userName');
+                const exitButton = document.getElementById('exitButton');
+    
+                const user = JSON.parse(localStorage.getItem('user'));
+                if (user) {
+                    // User is logged in, show their name
+                    exitButton.style.display = 'inline-block';
+                    userNameDiv.textContent = `خوش آمدی, ${user.name}`;
+                    userNameDiv.style.display = 'block';
+                    exitButton.addEventListener('click', () => {
+                        // Remove user data from localStorage
+                        localStorage.removeItem('user');
+                        // Clear all cookies
+                        document.cookie.split(";").forEach((cookie) => {
+                            const name = cookie.split("=")[0].trim();
+                            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+                        });
+                        // Reload the page to update the UI
+                        window.location.reload();
+                    });
+                } else {
+                    exitButton.style.display = 'none';
+                    // User is not logged in, navigate to login screen when image is clicked
+                    userImage.addEventListener('click', () => {
+                        window.location.href = 'login.html';
+                    });
+                }
+            });
+        </script>
     </body>
 
 </html>

@@ -105,7 +105,7 @@ async function getCartItems() {
   }
 }
 
-async function updateCart(itemID, quantity) {
+async function updateCart(itemID, quantity,userID) {
   try {
     const response = await fetch(
       `http://localhost:3100/api/v1/orders/update`,
@@ -114,6 +114,7 @@ async function updateCart(itemID, quantity) {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials : true ,
         body: JSON.stringify({
           itemId: itemID,
           quantity: quantity,

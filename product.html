@@ -155,22 +155,25 @@
         const title = document.getElementById("title");
         const price = document.getElementById("price");
         const addToCartButton = document.getElementById("addToCartButton");
-        const amount = document.getElementById("amount");
+        const     amount = document.getElementById("amount");
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get("id");
+        const user = JSON.parse(localStorage.getItem('user'));
+
         fetchProductByID(productId).then((result) => {
             console.log(result);
             description.innerText = result.description;
             price.innerText = result.price + " ریال ";
             title.innerText = result.name;
         });
+        if(user){
         addToCartButton.addEventListener('click', () => {
-            updateCart(productId,amount.value).then((result) => {
+            updateCart(productId,amount.value,user.userId).then((result) => {
                 console.log(result);
             });
             // Reload the page to update the UI
             // window.location.reload();
-        });
+        });}
     </script>
 </body>
 
